@@ -1,0 +1,161 @@
+/*
+
+*/
+
+
+@font-face {
+    font-family: 'Franklin Gothic Demi Ext Cmp';
+    src: url('../webfonts/webfonts/24AAF3_13_0.eot');
+    src: url('../webfonts/webfonts/24AAF3_13_0.eot?#iefix') format('embedded-opentype'),
+    url('../webfonts/webfonts/24AAF3_13_0.woff') format('woff'),
+    url('../webfonts/webfonts/24AAF3_13_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Franklin Gothic Extra Cond';
+
+    src: url('../webfonts/webfonts/24AAF3_13_0.eot');
+    src: url('../webfonts/webfonts/24AAF3_13_0.eot?#iefix') format('embedded-opentype'),
+    url('../webfonts/webfonts/24AAF3_13_0.woff') format('woff'),
+    url('../webfonts/webfonts/24AAF3_13_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ITC Franklin Gothic Std Bk CD';
+    src: url('../webfonts/webfonts/24AAF3_11_0.eot');
+    src: url('../webfonts/webfonts/24AAF3_11_0.eot?#iefix') format('embedded-opentype'),
+    url('../webfonts/webfonts/24AAF3_11_0.woff') format('woff'),
+    url('../webfonts/webfonts/24AAF3_11_0.ttf') format('truetype');
+
+}
+
+@font-face {
+    font-family: 'ITC Franklin Gothic Std MD CD';
+    src: url('../webfonts/webfonts/24AAF3_7_0.eot');
+    src: url('../webfonts/webfonts/24AAF3_7_0.eot?#iefix') format('embedded-opentype'),
+    url('../webfonts/webfonts/24AAF3_7_0.woff') format('woff'),
+    url('../webfonts/webfonts/24AAF3_7_0.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'FranklinGothicURWExtComD-Boo';
+    src: url('../webfonts/webfonts/24AAF3_10_0.eot');
+    src: url('../webfonts/webfonts/24AAF3_10_0.eot?#iefix') format('embedded-opentype'),
+    url('../webfonts/webfonts/24AAF3_10_0.woff') format('woff'),
+    url('../webfonts/webfonts/24AAF3_10_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FranklinGothicURWCon-Boo';
+    src: url('../webfonts/webfonts/24AAF3_11_0.eot');
+    src: url('../webfonts/webfonts/24AAF3_11_0.eot?#iefix') format('embedded-opentype'),
+    url('../webfonts/webfonts/24AAF3_11_0.woff') format('woff'),
+    url('../webfonts/webfonts/24AAF3_11_0.ttf') format('truetype');
+}
+
+header h1 a, footer h2 a {
+    z-index:300;
+    display:block;
+    width:289px;
+    height:137px;
+    color:#ed712b;
+    background:url(../images/su_tag_logo.png) left top no-repeat;
+
+    text-decoration:none;
+    text-transform:uppercase;
+    margin:0px;
+    padding:0px;
+    text-indent:-999px;
+    overflow:hidden;
+
+
+}
+
+#searchbox {
+    position: absolute;
+    right:20px;
+    top:65px;
+    width:250px;
+    height:45px;
+    border-radius:5px;
+    padding:10px;
+    font-family: 'museo-slab';
+    color:#ffffff;
+    background: #e86120 url(../images/search_arrow.png) 0px 50% no-repeat;
+    z-index:300;
+}
+
+
+#searchbox input {
+    background:none;
+    border:none;
+    color:#ffffff;
+    font: normal 18px 'museo-slab', serif;
+    width:180px;
+    height:40px;
+
+
+}
+
+#searchbox button {
+    float:right;
+    width:37px;
+    height:29px;
+    margin: 10px 0px 0px 0px;
+    padding:0px;
+
+    background:url(../images/searchbutton.png) left top no-repeat;
+    border:none;
+    text-indent: -9999px;
+
+}
+
+
+#searchbox ::-webkit-input-placeholder {
+    color: #ffffff;
+}
+
+#searchbox :-moz-placeholder { /* Firefox 18- */
+    color: #ffffff;
+}
+
+#searchbox ::-moz-placeholder {  /* Firefox 19+ */
+    color: #ffffff;
+}
+
+#searchbox :-ms-input-placeholder {
+    color: #ffffff;
+}
+
+
+
+#rotation {
+    width:1000px;
+    height:400px;
+    overflow:hidden;
+    position: relative;
+}
+
+.rotationinfo {
+    position: absolute;
+    left:50px;
+    top:100px;
+    width:500px;
+    color:#ffffff;
+}
+
+.rotationinfo h2 {
+    color:#ffffff;
+    font-family: 'FranklinGothic';
+    font-size:52px;
+    margin:0px;
+    padding:3px;
+    line-height: 1.1em;
+    text-shadow: 1px 1px 6px #000000;
+}
+
+.rotationinfo a {
+    color: #f47321;
+    text-decoration: none;
+}

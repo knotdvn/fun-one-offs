@@ -1,0 +1,133 @@
+
+#leftnav{
+    float:left;
+}
+
+
+#content{
+    height:500px;
+    background-color:white;
+}
+
+.banner-overlay{
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    background: rgba(255,255,255, .6);
+    color:#666666;
+}
+
+.banner-overlay h2{
+    margin:0px;
+    margin-bottom:5px;
+    padding: 0px 20px;
+}
+
+.banner-overlay p{
+    margin:0px;
+    padding: 0px 20px;
+
+}
+
+
+#tilesort{
+    float:left;
+    width:800px;
+    float:left;
+}
+#tilesort h2{
+    margin:0px;
+    padding:5px;
+    margin-top:15px;
+}
+
+#tilesearch{
+    padding:20px;
+    float:left;
+
+}
+#tiles_container{
+    width:100%;
+    float:left;
+    background-color:#E8E5D6;
+}
+#tiles{
+    float:left;
+    padding:10px;
+    min-width:780px;
+}
+
+
+.tile-container{
+    width:25%;
+    float:left;
+}
+
+.tile{
+    margin:10px;
+    border:1px solid #999999;
+    border-radius:5px;
+    background-color:#EFEFEF;
+    overflow:hidden;
+    height:116px;
+}
+
+.tile img{
+    width:100%;
+    border-bottom:1px solid #999999;;
+}
+
+.tile p{
+    padding:15px;
+    margin:0px;
+    font-size:12px;
+}
+
+.tile a{
+    margin:0px;
+    display:block;
+    width:100%;
+    font-size:16px;
+    transition: color 1s, background-color 1s;
+    text-decoration: none;
+    color:#f47321;
+    position:relative;
+}
+
+.tile a:hover{
+    color:#666666;
+    background-color:#f47321;
+}
+
+.tile a p{
+    padding:0px;
+    padding-left:5px;
+    font-size:14px;
+    position:absolute;
+    bottom:4px;
+    left:0px;
+    background-color: rgba(255,255,255,.9);
+    width:100%;
+    transistion: background-color 2s;
+}
+
+.tile-container:first-child{
+    width:50%;
+}
+
+.tile-container:first-child .tile{
+    height:auto;
+}
+
+.tile a:hover p{
+    background-color:#F47321;
+}
+
+.tile .click{
+    width:20px;
+    height:20px;
+    position:absolute;
+    right:-8px;
+    bottom:1px;
+
+}

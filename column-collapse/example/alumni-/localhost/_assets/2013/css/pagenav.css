@@ -1,0 +1,84 @@
+/* Left Nav */
+#leftnav, .nav-audience ul {
+    margin: 60px 0px 0px 0px;
+    padding: 0px 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-right:20px
+}
+
+#leftnav li, .nav-audience ul li {
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 1px;
+    list-style: none;
+    margin: 3px;
+    line-height: 24px;
+    font-size: .8em;
+}
+
+#leftnav li:hover, .nav-audience ul li:hover {
+    /* background-color: #333333; */
+}
+
+#leftnav li a:hover, , .nav-audience ul li a:hover {
+    color: #ffffff;
+}
+
+#leftnav li a, .nav-audience ul li a {
+    display: block;
+    margin: 0px 0px 0px 6px;
+    color: #666;
+    text-decoration: none;
+}
+
+#leftnav ul, .nav-audience ul {
+    margin: 10px 0px 0px 20px;
+    padding: 0px;
+    display: block;
+}
+
+#leftnav ul li, .nav-audience ul li {
+    padding-bottom: 0px;
+}
+
+
+#leftnav li a:after, .nav-audience ul li a:after {
+    content: "    \232a"; 
+    display: block;
+    float: right;
+    margin-right: 10px;
+}
+
+#leftnav li a:only-child:after, .nav-audience ul li a:after {
+    content: ''; 
+
+}
+
+.nav-audience ul li ul {
+    margin-top: 20px;
+}
+
+/* Breadcrumbs */
+.breadcrumbs h4 {
+    margin: 10px 0px 0px 0px;
+    color: #e65920;
+    font-size: 26px;
+    font-family: "ITC Franklin Gothic Std Bk CD";
+}
+
+.breadcrumbs {
+    font-size: 11px;
+    color: #816454;
+    border-bottom: 1px solid #eeeeee;
+    margin:0px;
+    padding: 10px 0px 10px 10px;
+}
+
+.breadcrumbs a {
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #333;
+}
+
+.breadcrumbs a:hover{
+    color: #69B7C3;
+}

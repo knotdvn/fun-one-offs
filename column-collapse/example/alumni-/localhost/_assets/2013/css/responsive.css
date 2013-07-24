@@ -1,0 +1,170 @@
+body{min-width: 320px;}
+/* Less than 1000*/
+@media only screen and (max-width: 1000px) {
+    .wrap{
+        width: 100%;
+    }
+    #headercontainer{
+        width:100%;
+    }
+
+    #container{
+        width: 100%;
+    }
+
+    #rotation{
+        width: 100%;
+    }
+    #rotation img{
+        width: 100%;
+    }
+    #footercontent{
+        width: 100%;
+    }
+    #footercontent h2{
+        padding-left:0px;
+    }
+
+    #features{
+        width: 100%;
+    }
+
+    #nav .sub{
+        display: none!important;
+    }
+    #col-tertiary{
+        width:240px;
+    }
+    #col-main {
+        float: none;
+        overflow: auto;
+        padding-right: 20px;
+        width:auto;
+        
+    }
+    #col-secondary{
+        width:100%;
+        float:left;
+    }
+    #col-secondary > div{
+        float:left;
+        margin-left:10px;
+        margin-right:10px;
+    }
+}/*End tablet layout*/
+
+@media only screen and (max-width: 750px) {
+    #nav{
+        margin-top:0px;
+    }
+    header{
+        padding-bottom: 20px;
+    }
+    #headercontainer{
+        height:auto;
+    }
+    #headercontainer h1{
+        position:relative;
+        left:auto;
+        top:auto;
+    }
+    #headercontainer h1 a{
+        margin: 0 auto;
+        display:table;
+    }
+
+    #audiencenav {
+        float: left;
+        position: relative;
+        width: 100%;
+        right:0px;
+        top:0px;
+        padding: 10px 0px;
+    }
+    #audiencenav ul {
+       margin: 0 auto;
+       display:table;
+    }
+    #searchbox{
+        position:relative;
+        right:auto;
+        top:auto;
+        margin: 10px auto;
+        width:269px;
+        margin-top:50px;
+        margin-bottom:20px;
+    }
+    #searchbox button{
+        margin: 0px auto;
+        display: table;
+    }
+
+   
+    #leftnav  {
+        display:none;
+    }
+    #leftnav li {
+        
+        float:left;
+    }
+    #col-main{
+        width:96%;
+        margin-left:2%;
+        padding-right:0px;
+    }
+    #col-secondary > div {
+        width: 42%;
+        padding:2%;
+        margin:10px 2%;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .rotationinfo{
+        left:10px;
+        top:10px;
+        width:auto;
+    }
+
+    #leftcol {
+        display: none!important;
+    }
+
+}
+
+/*Columns */
+@media only screen and (max-width: 520px) {
+   
+}
+
+
+@media only screen and (max-width: 450px) {
+    .rotationinfo h2{
+        font-size: 36px;
+    }
+    #searchbox{
+        
+        margin-top:65px;
+        
+    }
+
+    #audiencenav li{
+        margin:0px;
+        width:46%;
+        text-align:center;
+        padding:2%;
+
+    }
+    #audiencenav ul{
+        width:290px;
+    }
+    
+}
+
+@media only screen and (max-width: 430px) {
+
+    #col-secondary > div {
+        width: 92%;
+        padding:2%;
+        margin:10px 2%;
+}

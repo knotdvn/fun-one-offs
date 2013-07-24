@@ -1,0 +1,117 @@
+/*
+    Layout
+*/
+
+header {
+    width:100%;
+    margin:0px;
+    padding:0px;
+    background:#373737;
+
+}
+
+#headercontainer {
+    position: relative;
+    width:1000px;
+    height:180px;
+    margin:0px auto 0px auto;
+    padding:0px;
+}
+
+#headercontainer h1 {
+    display: block;
+
+    position: absolute;
+    left:20px;
+    top:-10px;
+    margin:0px;
+    padding:0px;
+
+}
+
+
+footer {
+    
+}
+
+#footercontainer {
+    width:1000px;
+    margin:0px auto 0px auto;
+}
+
+
+
+footer {
+    width:100%;
+    height:auto;
+    background:#373737;
+    margin:0px 0px 0px 0px;
+    padding:0px;
+}
+
+
+#footercontent {
+    width:946px;
+    margin:10px auto 0px auto;
+    padding:0px;
+
+}
+
+.footercolumn {
+    float:left;
+    width:200px;
+    margin:10px 5px 10px 5px;
+    padding:0px 10px 5px 15px;
+    color:#999999;
+    font:10px helvetica, arial, sans-serif;
+
+}
+
+.footercolumn:first-child {
+    background:none;
+    padding:0px 10px 5px 0px;
+}
+
+.footercolumn p {
+    line-height:1.2em;
+    margin:0px 0px 10px 0px !important;
+}
+
+footer b, footer strong {
+    color:#F58527;
+    font-weight:bold;
+}
+
+footer h2 {
+    color:#F58527;
+}
+
+footer a, footer a:visited {
+    color:#999999;
+    text-decoration:none;
+}
+
+footer h2 a {
+    color:#f58527 !important;
+}
+
+footer a:hover {
+    color:#f58527;
+}
+
+.footercolumn h2 {
+    margin:0px 0px 5px 0px !important;
+    text-transform:uppercase;
+}
+
+#footercolumncontainer {
+    margin:45px 0px 20px 0px;
+}
+
+#syrcopy {
+    position:absolute;
+    right:0px;
+    bottom:10px;
+    text-align:right;
+}
+

@@ -1,0 +1,8 @@
+-q -%i -iC2 http://localhost/alumni/index.html -O "/home/dvn/websites/alumni-" -n -%P -p7 -N0 -s2 -p7 -S -a -K0 -c10 -%k -r1 -A25000 -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2008], %s -->" +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/* -.pdf -%s -%u
+File generated automatically on Wed, 24 Jul 2013 10:20:46, do NOT edit
+
+To update a mirror, just launch httrack without any parameters
+The existing cache will be used (and modified)
+To have other options, retype all parameters and launch HTTrack
+To continue an interrupted mirror, just launch httrack without any parameters
+

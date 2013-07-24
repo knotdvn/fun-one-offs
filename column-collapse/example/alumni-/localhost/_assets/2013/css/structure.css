@@ -1,0 +1,575 @@
+/*
+
+    Structure
+
+*/
+/* mini-grid - basic grid to give you some griddiness in your pages - Add the .textbox class if you need some padding! */
+.content-1-3, .content-2-3, .content-1-2, .content-1-4, .content-2-4, .content-3-4, #col-tertiary, #col-secondary {
+    display: block;
+    float: left;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+.content-1-2 {
+    width: 50%;
+}
+
+.content-1-3 {
+    width: 33.333%;
+}
+
+.content-2-3 {
+    width: 63%;
+}
+
+.content-3-4 {
+    width: 74%;
+}
+
+.content-1-4, #col-tertiary, #col-secondary {
+    width: 24%;
+}
+.content-2-4 {
+    width: 50%;
+}
+
+.textbox {
+    padding: .5em;
+}
+
+/* end mini grid styles */
+
+@font-face {
+    font-family: "FranklinGothic";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../webfonts/franklingothic-demi-webfont.eot?#iefix") format("embedded-opentype"),
+    url("../webfonts/franklingothic-demi-webfont.woff") format("woff"),
+    url("../webfonts/franklingothic-demi-webfont.ttf") format("truetype");
+}
+
+
+body {
+    background:#ffffff;
+    margin:0px;
+    padding:0px;
+}
+
+
+#container {
+    width:1000px;
+    margin:0px auto 0px auto;
+    padding:0px;
+}
+
+
+.orangebg{
+    background-color: #F47321;
+}
+
+.greybg{
+    background-color:#373737;
+}
+
+.whitebg{
+    background-color:white;
+}
+
+.orange{
+    color:#F47321;
+}
+.ribbon{
+    width:100%;
+    float:left;
+    clear:both;
+    position:relative;
+}
+
+.wrap{
+    width:1000px;
+    margin:0 auto;
+    display: table;
+    position:relative;
+    clear:both;
+
+}
+
+
+#featurebanner {
+    position: relative;
+    width:100%;
+    text-align: center;
+    overflow:hidden;
+}
+
+#widebanner {
+    position: relative;
+    width:100%;
+    height:475px;
+    margin:0px auto 0px auto;
+    padding:0px;
+    text-align:center;
+    z-index:200;
+}
+
+
+#overbanner {
+
+    position: absolute;
+    left:50%;
+    top:20px;
+    margin:0px 0px 0px -480px;
+    padding:0px;
+    width:960px;
+    height:475px;
+    z-index:300;
+}
+
+
+a.prev, a.next, .slidesjs-navigation {
+    width: 53px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    top: 85px;
+    z-index:300;
+    text-indent: -9999px;
+    overflow:hidden;
+}
+a.prev, .slidesjs-previous {
+    left: 0px;
+    background: url(../images/arrow_feature_left.png) left top no-repeat;
+    opacity:.7;
+}
+
+a.prev:hover, a.slidesjs-previous:hover {
+    opacity:1 !important;
+}
+
+a.prev.disabled {   background-position: 0 -100px !important;  }
+
+a.next, .slidesjs-next {
+    right: 0px;
+    background: url(../images/arrow_feature_right.png) left top no-repeat;
+    opacity:.8;
+}
+
+a.next:hover, a.slidesjs-next:hover {
+    opacity:1 !important;
+}
+a.next.disabled {   background-position: -50px -100px !important;  }
+
+
+
+ul.slidesjs-pagination {
+    position:absolute;
+    right:0px;
+    top:0px;
+    width:auto;
+    height:25px;
+    margin:0px 20px 0px 0px;
+    padding:0px;
+    list-style: none;
+    z-index:300;
+}
+
+.slidesjs-pagination li {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+    float:left;
+}
+
+.slidesjs-pagination li a {
+    display: block;
+    margin:5px;
+    padding:3px;
+    background: #F47321;
+    border-radius: 7px;
+    border:none;
+    width:5px;
+    height:5px;
+    text-indent:-9999px;
+    overflow: hidden;
+}
+
+.slidesjs-pagination li a.active {
+    background:#00b3ff;
+}
+
+
+
+
+
+#newsheadlines {
+
+    flot:left;
+    width:295px;
+    height:435px;
+    background:#df511f;
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    color:#2f2f2d;
+    z-index:300;
+}
+
+#newsheadlines .title {
+    height:50px;
+    width:auto;
+    background:#2f2f2d;
+    margin:0px 0px 0px 0px;
+    padding:10px 5px 0px 10px;
+    text-align:left;
+}
+
+.title h2 {
+    color:#ffffff;
+    margin:15px 5px 0px 0px;
+    padding:0px;
+    font: normal 16px "museo-slab", serif;
+}
+
+#newsheadlines img {
+    height:185px;
+    margin:0px;
+    padding:0px;
+}
+
+.headlineitem {
+    margin: 20px auto 0px auto;
+    padding:10px;
+}
+
+.headlineitem a {
+    font:bold 24px 'ITC Franklin Gothic Std MD CD', arial, helvetica, sans-serif;
+    color:#2f2f2d;
+    text-decoration: none;
+    line-height: 1.6em;
+}
+
+.headlineitem a:hover {
+    color:#ffffff;
+}
+
+#pagebanner {
+    width:980px;
+    height:auto;
+    margin:0px;
+    padding:10px;
+    overflow:hidden;
+    background:#666666;
+}
+
+#pagebanner h2 {
+    color:#ffffff;
+    font-family: 'FranklinGothic';
+    font-size:36px;
+    text-transform: uppercase;
+    margin:20px 0px 0px 10px;
+    padding:3px;
+    line-height: 1.1em;
+    text-shadow: 1px 1px 6px #000000;
+
+}
+.bannerinfo {
+    border-top:1px solid #e8e5d6;
+    margin:5px 5px 5px 10px;
+    padding:3px;
+}
+
+.bannerinfo ul {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+.bannerinfo li {
+    float:left;
+    list-style: none;
+    margin:3px 20px 3px 0px;
+}
+
+.bannerinfo li a {
+    display: block;
+    color:#fff8eb;
+    text-decoration: none;
+    font-size: 14px;
+    margin:0px;
+    padding:3px 10px 3px 0px;
+}
+
+.bannerinfo li a:hover {
+    color:#f47321;
+}
+
+#features {
+    position: relative;
+    width:1100px;
+    height:auto;
+
+    margin:0px 0px 0px -10px;
+    padding:0px;
+}
+
+#prev {
+    display:block;
+    text-indent:-999px;
+    width:30px;
+    height:300px;
+    overflow: hidden;
+    position: absolute;
+    left:-30px;
+    top:50px;
+    background:url(../images/prev.png) left top no-repeat;
+    opacity:.5;
+}
+
+#next {
+    display:block;
+    text-indent:-999px;
+    width:30px;
+    height:300px;
+    overflow: hidden;
+    position: absolute;
+    right:50px;
+    top:50px;
+    background:url(../images/next.png) right top no-repeat;
+    opacity:.5;
+}
+
+.caroufredsel_wrapper {
+    height:300px;
+
+}
+
+#features ul {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+
+}
+
+#features li {
+    display:block;
+    float:left;
+    margin:10px 10px 10px 10px;
+    padding:0px;
+    width:233px;
+    height:320px;
+    border:1px solid #c0c0c0;
+    background:#ffffff;
+}
+
+#features li img {
+    display: block;
+    width:100%;
+
+}
+
+.featureimage {
+    position: relative;
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:150px;
+    overflow:hidden;
+}
+
+.featureicons {
+    position: relative;
+
+    width:100%;
+    margin:-20px 0px 0px 0px;
+    padding:0px;
+    text-align: center;
+
+    height:40px;
+}
+
+
+.featureicons ul {
+    margin:0px 0px 0px 0px;
+    padding:0px;
+    list-style: none;
+}
+
+.featureicons li {
+
+    list-style: none;
+    margin:5px 10px 10px 20px !important;
+    padding:0px;
+    float:left;
+    width:20px !important;
+    height:20px !important;
+    border:none !important;
+    background:none !important;
+}
+
+.featureicons li a {
+    display:block;
+    text-decoration: none;
+    padding:3px;
+}
+
+.featureicons img {
+    width:auto !important;
+    height:auto !important;
+}
+
+.featureitems {
+    position: relative;
+    width:233px;
+    height:320px;
+    margin:0px;
+    padding:0px;
+}
+
+
+.featureinfo {
+
+    margin:0px;
+    padding: 0px;
+
+}
+
+.featureinfo h2 {
+    display:block;
+    margin:0px 0px 5px 0px;
+    padding:0px 10px 10px 20px;
+    font:normal 24px 'ITC Franklin Gothic Std Bk CD', sans-serif;
+}
+
+.featureinfo h2 a {
+    text-decoration: none;
+    color:#2f2f2d;
+}
+
+.featureinfo p {
+    margin:3px;
+    padding:3px;
+}
+
+.featurelink {
+    display:none;
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    background:#ffffff;
+    color:#2f2f2d;
+    padding:5px;
+    font-size:14px;
+    width:223px;
+    height:25px;
+}
+
+.featurelink a {
+    text-decoration: none;
+    color:#2f2f2d;
+}
+
+.sectioninfo {
+
+    color:#ffffff;
+    font-size:16px;
+    font-family: 'museo-slab';
+    padding:10px 5px 10px 20px;
+    background:#2f2f2d;
+}
+
+#threecol {
+    width:1100px;
+    height:400px;
+    margin:20px 0px 0px -5px;
+    padding:0px;
+}
+
+#threecol ul {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+#threecol li {
+    float:left;
+    width:323px;
+    margin:0px 5px 0px 0px;
+    padding:5px;
+
+}
+
+#threecol li h2 {
+    font-size:26px;
+    text-transform: uppercase;
+}
+
+#threecol li p {
+    width:100%;
+    text-align: left;
+    color:#666666;
+    padding:10px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.ui-autocomplete {
+
+    margin:0px;
+    padding:0px;
+    background:#3a768f;
+    color:#ffffff;
+}
+
+
+
+.ui-menu-item {
+    margin:0px;
+    padding:0px;
+    border-bottom: 1px solid #333333;
+}
+
+.ui-menu-item a {
+    display:block;
+}
+
+.ui-menu-item a:hover {
+    background: #f47321;
+    color:#ffffff;
+    display:block;
+}
+
+.quicklinks {
+    margin:0px;
+    padding:10px;
+    width:300px;
+
+}
+
+.quicklinks ul {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+.quicklinks li {
+    list-style: none;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.quicklinks li a {
+    width:90%;
+    display: block;
+    color:#1883ba;
+    text-decoration: none;
+    margin:0px;
+    padding:3px 3px 3px 10px;
+    background: url(../images/btn_search.gif) right top no-repeat;
+}
+
+.quicklinks li a:hover {
+    background: #F47321;
+    color:#ffffff;
+}

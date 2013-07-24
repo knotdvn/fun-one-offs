@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<!--[if gt IE 8]><!-->
+
+<!-- Mirrored from localhost/alumni/index.html by HTTrack Website Copier/3.x [XR&CO'2008], Wed, 24 Jul 2013 14:20:46 GMT -->
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <title>Alumni Home | Syracuse University</title>
+    <meta content="" name="description"/>
+    <meta content="width=device-width" name="viewport"/>
+    
+    
+    <meta content="Thu, 18 Jul 2013 12:03:46 -0560" name="date"/>
+    
+    </head><!--<![endif]-->
+ <link href="../_assets/2013/css/normalize.css" rel="stylesheet"/>
+        <link href="../_assets/2013/css/main.css" rel="stylesheet"/>
+        <link href="../_assets/2013/css/layout.css" rel="stylesheet"/>
+        <link href="../_assets/2013/css/syr.css" rel="stylesheet"/>
+        <link href="../_assets/2013/css/home.css" rel="stylesheet"/>
+        <link href="../_assets/2013/css/structure.css" rel="stylesheet"/>
+        <link href="../_assets/2013/css/nav.css" rel="stylesheet"/>
+        <link href="../_assets/2013/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet"/>
+       
+
+        <link href="../_assets/2013/css/tiles.css" rel="stylesheet"/>
+
+        <link href="../_assets/2013/css/pagenav.css" rel="stylesheet"/>
+        <link href="../_assets/2013/css/content.css" rel="stylesheet"/>
+        <link href="../_assets/2013/css/responsive.css" rel="stylesheet"/>
+
+    <script src="http://localhost/_assets/2013/lib/modernizr-2.6.2.min.js"></script>
+
+    <script src="http://use.typekit.net/txq8xpz.js" type="text/javascript"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script src="http://localhost/_assets/2013/lib/jquery-1.9.1.min.js"> </script>
+  <script src="http://localhost/_assets/2013/js/masonry.pkgd.min.js" ></script>
+    <script type="text/javascript">
+        //get width
+        function getWidth(){
+            var width = window.innerWidth ||
+                document.documentElement.clientWidth ||
+                document.body.clientWidth;   
+                return width;
+        }//end function get width
+
+
+        //global vars
+        var $container;
+        //for the 1000 column
+        var dvnonce = true;
+        //for the 750 column
+        var dvntwice = false;
+        //for the rare occaision we go big to small
+        var dvnthrice = false;
+        //another rare occaision
+        var dvnfour = false;
+
+        function resizedw(){
+            // Haven't resized in 400ms!
+            // Get the dimensions of the viewport
+            var width = getWidth();
+            //var height = $(window).height();
+            //if less than 1000 and first
+            if(width <=1000 && dvnonce){
+                 $container = $('#col-secondary');
+                 $('#col-main').append($container);
+                 // initialize
+                 $container.masonry({
+                });
+                //setting this false means we wont initialize again 
+                dvnonce = false;
+                //setting this true means we will append
+                dvntwice = true;
+                //setting this lets us unappend
+                dvnfour = true;
+                $container.masonry('reloadItems');
+                $container.masonry();
+
+            }//end if 1000
+
+
+            //if width is < than 750 time to masonry
+            if(width <= 750 && dvntwice){
+               if( $('#col-tertiary').not(':has(#leftnav)') ){
+                    
+                    //setting this false means we wont append again
+                    dvntwice = false;
+                    //setting this true lets us fix it 
+                    dvnthrice = true;
+
+                   var dawg = $('#col-tertiary').children();
+                   $(dawg).addClass('terti');
+                   $('#col-secondary').prepend(dawg).masonry('reloadItems');
+                    $('#col-tertiary').html('');
+                  $container.masonry('reloadItems');
+                  $container.masonry();
+
+
+                    
+               }//end if not nav
+            }//end if <750
+
+
+
+            //if width is 751 or bigger
+            if(width >= 751 &&dvnthrice){
+                $('#col-secondary').children().each(function(){
+                    if($(this).hasClass('terti')){
+                        $(this).css(
+                            {position:'relative',
+                             left: '0px', 
+                             top: '0px', 
+                             right: '0px',
+                              bottom: '0px',
+                              float:'left',
+                              transition: 'none',
+                              transform: 'none'});
+                        $('#col-tertiary').append($(this));
+                        
+                    }
+                });
+
+                dvnthrice = false;
+                dvnonce = false;
+                dvntwice = true;
+                dvnfour = true;
+                $container.masonry('reloadItems');
+                  $container.masonry();
+
+
+            }//end if bigger than 751 again
+
+            //if width is 751 or bigger
+            if(width >= 1001 &&dvnfour){
+                $('#maincontainer').append($container);
+                dvnfour = false;
+                dvnonce = true;
+                dvntwice = false;
+                dvnthrice = false;
+            }//end if big again
+             
+        }//end resize function
+
+        //this function only fires our app logic 
+        //400ms after the last resize event
+        //prevents over-firing
+        var doit;
+        $(window).resize(function(){
+          clearTimeout(doit);
+          doit = setTimeout(resizedw, 400);
+        });//end timeout check
+
+        $(window).load(function(){
+            if(getWidth() <= 1000){
+            $('#col-secondary').masonry();
+            }
+        });
+
+
+
+
+    </script>
+
+
+
+<body>
+
+
+<header>
+<div id="headercontainer">
+<h1><a href="http://localhost/index.html">Syracuse University</a></h1>
+
+    <div id="audiencenav">
+        <ul>
+            <li><a href="http://localhost/admissions/index.html">Admissions</a></li>
+            <li><a href="index.html">Alumni</a></li>
+            <li><a href="http://localhost/currentstudents/index.html">Current Students</a></li>
+            <li><a href="http://localhost/facultyandstaff/index.html">Faculty/Staff</a></li>
+        </ul>
+    </div>
+    <div id="searchbox">
+        <form action="http://localhost/search">
+            <input name="search" placeholder="Search SU" type="text" value=""/>
+
+            <button>Search</button>
+        </form>
+    </div>
+
+    <nav>
+    <div class="ribbon">
+        <div class="wrap clearfix" id="nav">
+            <ul>
+                <li>
+                    <a href="#">SU</a>
+                    <ul class="sub">
+                        <li><a href="#">Admissions</a>
+                               <ul>
+                                   <li><a href="#">Undergraduate</a></li>
+                                   <li><a href="#">Graduate</a></li>
+                                   <li><a href="#">Financial Aid</a></li>
+                                   <li><a href="#">University College</a></li>
+
+                               </ul>
+                        </li>
+
+                        <li><a href="#">Alumni</a></li>
+                        <li><a href="#">Current Students</a></li>
+                        <li><a href="#">Faculty and Staff</a></li>
+                        <li><a href="#">Parents</a></li>
+                        <li>
+                            <a href="#">More about SU &gt;</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ABOUT SU</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="#">School and Colleges</a>
+                        </li>
+                        <li>
+                            <a href="#">Departments and Offices</a>
+                        </li>
+                        <li>
+                            <a href="#">Chancellor</a>
+                        </li>
+                        <li>
+                            <a href="#">Provost</a>
+                        </li>
+                        <li>
+                            <a href="#">Trustees</a>
+                        </li>
+                        <li>
+                            <a href="#">Our Vision</a>
+                        </li>
+
+                        <li>
+                            <a href="#">More about SU &gt;</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ACADEMICS</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="#">Academic Departments</a>
+                        </li>
+                        <li>
+                            <a href="#">Course Catalog</a>
+                        </li>
+                        <li>
+                            <a href="#">Classroom Info</a>
+                        </li>
+                        <li>
+                            <a href="#">Enrollment Management</a>
+                        </li>
+                        <li>
+                            <a href="#">Academic Calendar</a>
+                        </li>
+                        <li>
+                            <a href="#">More about SU &gt;</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">SU GLOBAL</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="#">Anchor Institution</a>
+                        </li>
+                        <li>
+                            <a href="#">SU in NYC</a>
+                        </li>
+                        <li>
+                            <a href="#">SU in DC</a>
+                        </li>
+                        <li>
+                            <a href="#">SU in LA</a>
+                        </li>
+                        <li>
+                            <a href="#">SU Abroad</a>
+                        </li>
+                        <li>
+                            <a href="#">More SU Global &gt;</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">PARTNERSHIPS</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="#">Connective Coridor</a>
+                        </li>
+                        <li>
+                            <a href="#">Near West Side Initiative</a>
+                        </li>
+                        <li>
+                            <a href="#">Corporate Partnerships</a>
+                        </li>
+                        <li>
+                            <a href="#">Foundation Partnerships</a>
+                        </li>
+                        <li>
+                            <a href="#">Center of Excellence</a>
+                        </li>
+                        <li>
+                            <a href="#">More Partnerships &gt;</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="news">
+                    <a href="#">NEWS</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="#">Connective Coridor</a>
+                        </li>
+                        <li>
+                            <a href="#">Near West Side Initiative</a>
+                        </li>
+                        <li>
+                            <a href="#">Corporate Partnerships</a>
+                        </li>
+                        <li>
+                            <a href="#">Foundation Partnerships</a>
+                        </li>
+                        <li>
+                            <a href="#">Center of Excellence</a>
+                        </li>
+                        <li>
+                            <a href="#">More about SU &gt;</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="news">
+                    <a href="#">POPULAR NOW</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="#">Blackboard</a>
+                        </li>
+                        <li>
+                            <a href="#">MySlice</a>
+                        </li>
+                        <li>
+                            <a href="#">Tuition</a>
+                        </li>
+                        <li>
+                            <a href="#">Cost of Attendance</a>
+                        </li>
+                        <li>
+                            <a href="#">Famous Alumni</a>
+                        </li>
+
+                        <li>
+                            <a href="#">More Popular Links &gt;</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+   
+</nav>
+</div>
+</header>
+
+<div id="container">
+<div class="clearfix" id="maincontainer">
+
+
+<div id="col-tertiary"><div class="sm-textImageVert"><h3>Upcoming Events</h3><p><content><p><strong><a href="http://www.syr.edu/alumni/events/SITC13.html"><img alt="SITC" height="141" src="images/SuccessintheCity_Logo-forCC.jpg" width="200"/><br/>
+ SUccess in the City</a></strong><br/>
+ Network with SU alumni and start building&#160;valuable connections. To learn more and register, visit <a href="http://www.syr.edu/alumni/events/SITC13.html">SUccess in the City</a>.&#160;</p>
+<p><strong><a href="http://invite.syr.edu/sitc_atl/" target="_blank">Atlanta<br/>
+</a></strong>July 24, 6&#8211;8 p.m.<br/>
+Capital City Club<br/>
+53 West Brookhaven Drive N.E.<br/>
+Atlanta, Georgia</p>
+<p><strong><a href="http://invite.syr.edu/sitc_chicago/" target="_blank">Chicago</a></strong>&#160;<br/>
+ July 30, 6&#8211;8 p.m.<br/>
+ Lincoln Park Zoo<br/>
+ Cannon Drive at Fullerton Parkway<br/>
+ Chicago, Illinois</p>
+<p><strong><a href="http://invite.syr.edu/sitc_la/" target="_blank">Los Angeles<br/>
+</a></strong> August 6, 7:30&#8211;9:30 p.m.<br/>
+ Syracuse University Los Angeles Office<br/>
+ 4312 Woodman Avenue, Suite 302<br/>
+ Sherman Oaks, California</p>
+<p><strong><a href="http://invite.syr.edu/sitc_sanfran/" target="_blank">San Francisco<br/>
+</a></strong> August 7, 6&#8211;8:30 p.m.<br/>
+ TBD</p>
+<hr/>
+<p><a href="http://invite.syr.edu/wrigley"><img alt="wrigley" height="73" src="images/wrigley.jpg" width="200"/></a></p>
+<p><strong><a href="http://invite.syr.edu/wrigley">Syracuse on a Wrigley Rooftop</a></strong><br/>
+ August 18, 2013 vs St. Louis Cardinals<br/>
+ Buy tickets here: <a href="http://invite.syr.edu/wrigley%20">http://invite.syr.edu/wrigley&#160;</a></p>
+<hr/>
+<p><strong><a href="http://cnyorange.org/site/scholarship-golf-tournament-registration-2/">CNY Orange Annual Golf Tournament</a></strong><br/>
+ July 15,2013 Golfing and Dinner&#160;<br/>
+ The Links at Erie Village<br/>
+ 5904 N. Burdick St., East Syracuse, NY<br/>
+ <a href="http://cnyorange.org/site/scholarship-golf-tournament-registration-2/">Register Now!</a>&#160;&#160;</p>
+<hr/>
+<p><a href="http://localhost/alumni/services/tours.html" target="_blank"><strong>Check out our 2013 Alumni Tours.</strong></a></p>
+<p>View the <a href="http://www.syr.edu/alumni/events/" target="_blank">regional calendar</a> to see events around the country.</p></content></p></div><div class="sm-textImageVert"><img alt="cuse chronicle" border="0" class="stroke" src="../images/alumni/cuse-chronicle.html"/><p><content><p><a href="http://commencement.syr.edu/"></a></p>
+<p>Check out the latest&#160; <a href="http://www.syr.edu/alumni/newsletters/cusechronicle/2013/FEB13.html" target="_blank">'Cuse Chronicle.</a></p>
+<p>'Cuse Chronicle <a href="http://localhost/alumni/newsletters/cusechronicle/cuse-chronicle-archives.html" target="_blank">Archived issues</a></p>
+<p><a href="http://sumagazine.syr.edu/" target="_blank"></a></p></content></p></div><div class="sm-textImageVert"><h3>Career Services</h3><p><content><p><a href="http://www.linkedin.com/groups?gid=4052030&amp;trk=myg_ugrp_ovr" target="_blank"><img alt="cc" height="50" src="images/cuseconnect.jpg" width="100"/></a><br/>
+From career planning and job placement to networking, mentoring, and posting available jobs, check out the options open to SU alums.</p>
+<p><a href="http://localhost/alumni/services/career-services.html" target="_blank">SU Alumni Resume Book</a><br/>
+<br/>
+<a href="http://localhost/alumni/services/brandyourself-instructions.html" target="_blank">Create a BrandYourself Account</a></p>
+<p><a href="http://careerservices.syr.edu/" target="_blank">Career Services<br/>
+</a><br/>
+<a href="http://www.syr.edu/registrar/students/transcripts.html" target="_blank">Request an official transcript</a><br/>
+<br/>
+<a href="http://llm.law.syr.edu/" target="_blank">College of Law now offers Masters of Laws (LL.M.)&#160;in American Law</a></p>
+<p>See interviews with alumni on the <a href="http://www.youtube.com/user/SUcareerservices1" target="_blank">Career Services YouTube Channel</a></p></content></p></div><div class="sm-textImageVert"><h3> SU Magazine</h3><img alt="SU Magazine Spring 2013 Cover" border="0" class="stroke" src="images/CVR%20SPG13.jpg"/><p><content><a href="http://sumagazine.syr.edu/" title="SU Magazine"></a>&#160; 
+<ul>
+<li><a href="http://sumagazine.syr.edu/" target="_blank" title="Spring 2013 issue">Syracuse University Magazine&#160;Spring 2013 issue.</a></li>
+<li><a href="http://subscribe.syr.edu/">Subscribe and be notified when the next issue comes out.</a></li>
+</ul></content></p></div></div>&#xA;<div id="col-main"><div class="lg-textImageHoriz"><img alt="OC_2013_425x350px.jpg" border="0" src="events/orangecentral/images/OC_2013_425x350px.jpg" title=""/><p><snippet><h3>Mark your calendar!</h3>
+<p>Join us on campus for <strong><a href="http://news.syr.edu/syracuse-university-announces-dates-for-fall-2013-signature-events/">Orange Central 2013</a></strong>&#8212;the one-and-only homecoming and reunion weekend for SU alumni and friends! Connect with classmates, today's students, and special guests, and cheer on the <strong>Orange</strong> at the inaugural ACC football game,&#160;<strong>Syracuse</strong> vs.&#160;Clemson.<br/>
+<br/>
+ <strong>Visit the <a href="http://localhost/alumni/events/orangecentral/index.html">official Orange Central site</a> for&#160;<a></a>more information and updates!<a></a></strong></p></snippet></p></div><div class="lg-textImageHoriz"><h2>National Alumni Association</h2><p><snippet><p>The Association is an advisory board of alumni elected to promote the general welfare and interests of Syracuse University as an institution with a committment to learning through teaching, research, scholarship, creative accomplishment, and service. Members of the SU Alumni Association Board of Directors are elected based on demonstrated involvement with Syracuse University.&#160; Read the latest blog posted by the SUAA president <strong><a href="http://suaapresident.com/" target="_blank">here.</a></strong></p>
+<p><a href="http://localhost/alumni/suaa/boardmembers.html" target="_blank"><strong>National Alumni Association Board&#160;Members</strong><br/>
+</a></p>
+<h3>Alumni Clubs</h3>
+<p>Syracuse University alumni clubs draw thousands of alums across the nation together to enjoy a broad range of social and educational programming. Events range from faculty speakers to career networking opportunities, from game-watching events to evenings at the theater.&#160;<br/>
+<br/>
+<a href="http://www.syr.edu/alumni/whereyoulive/clubs/">Listing of regional clubs by state</a><br/>
+<a href="http://localhost/alumni/whereyoulive/clubs/specialty_clubs/index.html">Listing of specialty clubs (band, ROTC, etc.)</a><br/>
+<a href="http://localhost/alumni/whereyoulive/clubs/international_contacts/index.html" target="_blank">Listing of international contacts</a><br/>
+<br/>
+<a href="http://suevents.syr.edu/main.php?calendar=alumniclubs&amp;view=month" target="_blank" title="Club Events">Regional Calendar</a></p>
+<p><a href="http://localhost/alumni/whereyoulive/clubs/broadcastemail.html" target="_blank">Broadcast Email Request Form</a></p>
+<p><a href="http://www.syr.edu/alumni/services/" target="_blank"><img alt="marsh" height="30" src="images/MARSH_horizontal_smaller.jpg" width="200"/></a>&#160;<img alt="lm" height="51" src="images/LMI_hp.jpg" width="200"/><a href="http://www.libertymutual.com/syracusealumni" target="_blank"></a></p></snippet></p></div><div class="lg-textImageHoriz"><h2>2013 Orange Circle Awards</h2><p><snippet><iframe frameborder="0" height="239" src="http://www.youtube.com/embed/OZjixcSLgmQ" width="425"></iframe> 
+<p>Every day, members of the Syracuse University community do great things in the service of others. This year, a highlight of Philanthropy Week was the presentation of the Orange Circle Award to four such individuals: <a href="http://www.syr.edu/alumni/awards/orangecircle/orange-circle-recipients.html#dulude">Richard Dulude &#8217;54,</a> <a href="http://www.syr.edu/alumni/awards/orangecircle/orange-circle-recipients.html#lphanstiel">Louise Phanstiel,</a> and <a href="http://www.syr.edu/alumni/awards/orangecircle/orange-circle-recipients.html#stith">Melvin T. Stith G&#8217;73, G&#8217;78 and Patricia L. Stith G&#8217;77.</a></p>
+<p>Meet our 2013 recipients in the video above, then <a href="http://giving.syr.edu/special-groups/students/philanthropy-week/" target="_blank">learn more about Philanthropy Week,</a> read notes submitted by students during <a href="http://giving.syr.edu/special-groups/students/philanthropy-week/thank-a-donor-day/" target="_blank">Thank-a-Donor Day,</a> and&#160;<a href="http://giving.syr.edu/photo-gallery/" target="_blank">view photos</a> of the week's events.</p></snippet></p></div></div>&#xA;<div id="col-secondary"><div class="sm-textImageVert"><p><content><h2 style="text-align: center;"><a href="http://www.syr.edu/alumni/whereyoulive/clubs/">Alumni Clubs Near You</a><strong><a href="http://www.syr.edu/alumni/whereyoulive/clubs/"><br/>
+</a><a href="http://www.syr.edu/alumni/whereyoulive/clubs/"><img alt="Club map" height="139" src="images/map.jpg" width="207"/></a></strong></h2>
+<hr/>
+<h2 style="text-align: center;"><a href="http://www.syr.edu/alumni/generationorange/">Young Alumni</a><a href="http://www.syr.edu/alumni/generationorange/"><br/>
+<img alt="gen o " height="105" src="images/GenO_Logo_Stack_red_white_200px.gif" style="display: block; margin-left: auto; margin-right: auto;" width="200"/></a></h2></content></p></div><div class="sm-textImageVert"><p><content><p style="text-align: center;"><a href="http://giving.syr.edu/giving-to-su/give-now/%20" target="_blank"><img alt="Give Now: Make a Gift to Syracuse University" height="110" src="../images/make_gift_transparent.gif" style="display: block; margin-left: auto; margin-right: auto;" width="207"/></a></p>
+<p><a href="http://giving.syr.edu/" target="_blank">Learn more about giving to SU</a></p>
+<p><a href="http://syracuse.planyourlegacy.org/index.php" target="_blank">Learn about bequests, trusts, and more</a></p></content></p></div><div class="sm-textImageVert"><h3>Stay Connected</h3><p><content><p>Join the <strong>'Cuse Community</strong> to set email preferences, submit class notes, and search for other alumni. <a href="http://www.alumniconnections.com/olc/pub/SYR/register/register.cgi" target="_blank">Click here</a> to register.</p>
+<p><a href="http://alumniupdate.syr.edu/" target="_blank"><img alt="Update your address" height="138" hspace="NaN" src="images/update_address_graphic_207.gif" width="207"/></a></p>
+<p>Update your address using our easy update form or send an e-mail to <a href="mailto:records@syr.edu">records@syr.edu</a>. If updating via e-mail, be sure to include your full name, class year, address, e-mail address, and phone number. Thank you! <a href="http://www.syr.edu/alumni/whereyoulive/clubs/">Locate an alumni club</a> in your area or connect through <a></a><a href="http://localhost/alumni/services/staying-connected.html">social media.<br/>
+</a></p>
+<p><a href="http://syr.edu/alumni/services/staying-connected.html"><img alt="SU online" class="nostroke" src="../images/icons/snicon_row.png"/></a></p>
+</content></p></div><div class="sm-textImageVert"><p><content><a href="http://campaign.syr.edu/" target="_blank"><img alt="The Campaign for Syracuse University in Review" height="249" src="../images/home_ad.jpg" width="207"/></a></content></p></div><div class="ad-space"><a href="http://suathletics.com/"><img alt="suathletics11.jpg" border="0" src="images/suathletics11.jpg"/></a></div></div>
+
+
+</div>
+</div>
+    <footer>
+                <div class="clearfix" id="footercontent">
+                <h2 clas="footer-logo"><a href="http://localhost/">Syracuse University</a></h2>
+                <div class="clearfix" id="footercolumncontainer">
+
+                    <div class="footercolumn">
+
+                        <p>820 Comstock Avenue<br/>
+                            Syracuse, New York 13244-5040</p>
+                            <p>Phone: 315.443.2865<br/>
+                                Toll-Free: 877.247.6978<br/>
+                                Fax: 315.443.2874</p>
+                        <p>E-mail: <a href="mailto:giving@syr.edu?subject=Boston%20Giving" title="Contact Us at giving@syr.edu">giving@syr.edu</a></p>
+                    </div>
+
+                    <div class="footercolumn"><h2>Links</h2>
+                        <p><a href="http://localhost/alumni/events/index.html">Upcoming Events</a>&#160;</p>
+                        <p><a href="http://localhost/alumni/admissions/index.html">Admissions</a></p>
+                        <p><a href="http://syracuse.planyourlegacy.org/" target="_blank">Planned Giving</a></p>
+                        <p><a href="https://secure.syr.edu/giving/boston.aspx" target="_blank">Give Now</a></p>
+                        <p><a href="http://localhost/alumni/contact-us/index.html">Contact Us</a></p>
+                        <p><a href="http://localhost/alumni/alumni/volunteer/index.html">For Volunteers</a></p>
+                    </div>
+
+                    <div class="footercolumn"><h2>SU Links</h2>
+                        <p><a href="http://syr.edu/" target="_blank">SU Home</a></p>
+                        <p><a href="http://syr.edu/alumni/" target="_blank">SU Alumni</a></p>
+                        <p><a href="http://syr.edu/futurestudents/" target="_blank">SU Admissions</a></p>
+                        <p><a href="http://news.syr.edu/" target="_blank">SU News</a></p>
+                        <p><a href="http://suevents.syr.edu/main.php" target="_blank">Upcoming Events</a></p>
+                        <p><a href="http://careerservices.syr.edu/" target="_blank">Career Services</a></p>
+                        <p><a href="https://www.suathletics.com/" target="_blank">Athletics</a></p>
+                        <p><a href="http://sumagazine.syr.edu/" target="_blank">Syracuse University Magazine</a></p>
+                    </div>
+
+                    <div class="footercolumn"><h2>Social Media Links</h2>
+                        <p><a href="http://www.facebook.com/SUinBoston" target="_blank">Facebook</a></p>
+                        <p><a href="https://twitter.com/bostonorange44" target="_blank">Twitter</a></p>
+                        <p><a href="http://www.linkedin.com/groups?gid=124080&amp;trk=group-name" target="_blank">LinkedIn</a></p>
+                        <p><a href="http://www.youtube.com/syracuse" target="_blank">YouTube</a></p>
+                        <p><a href="http://socialmedia.syr.edu/directory/" target="_blank">Social Media Directory</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+</body>
+
+<!-- Mirrored from localhost/alumni/index.html by HTTrack Website Copier/3.x [XR&CO'2008], Wed, 24 Jul 2013 14:21:00 GMT -->
+</html>

@@ -1,0 +1,166 @@
+nav {
+    z-index:200;
+    margin:0px 0px 0px 0px;
+}
+
+#nav {
+
+    margin:135px auto 0px auto;
+
+    overflow:hidden;
+    transition: height 2s;
+    font-family: "museo-slab";
+    font-size:22px;
+      background-color:#373737;
+}
+
+#nav ul {
+    padding:0px 0px 0px 10px;
+    margin:0px;
+    float:left;
+    overflow:hidden;
+}
+
+#nav ul ul {
+    padding:0px;
+}
+
+#nav ul li {
+    list-style:none;
+    display: inline;
+    width:140px;
+    float:left;
+    cursor:pointer;
+    padding: 5px 0px;
+}
+
+#nav ul li a {
+    color: white;
+    text-decoration:none;
+    padding:2px 0px 3px 4px;
+    font-size:14px;
+    color:#69b7c3;
+}
+
+#nav:hover {
+  
+    transition: height 2s;
+}
+
+#nav ul li:hover {
+
+}
+
+#nav ul li:hover a {
+    color:#f47321;
+}
+
+#nav ul li:hover .sub li {
+
+
+}
+
+#nav ul li:hover .sub li a {
+    color:#E8E5D6;
+}
+
+#nav .sub {
+    background-color:#333333;
+    text-align:left;
+    height:0px;
+    
+    padding:0px;
+    font-size:12px;
+    width:100%;
+    transition: height 2s;
+
+
+}
+
+#nav:hover .sub {
+    transition: height 2s;
+    display:block;
+    margin:0px;
+    padding:0px;
+    height:260px;
+    margin:0px 0px 0px 0px;
+}
+
+#nav .sub li {
+    display:block;
+    background-color:#333333;
+    width:138px;
+    margin: 5px 0px 0px 0px;
+    padding: 4px 3px 3px 4px;
+    border-right:1px solid #e8e5d6;
+}
+
+#nav .sub li a {
+    display:block;
+    margin:0px;
+    padding:3px 3px 0px 3px;
+    font-family: arial,helvetica, sans-serif;
+    font-size:12px;
+    color:#E8E5D6;
+}
+
+
+#nav .sub li a:hover {
+
+    color:#f47321 !important;
+}
+
+#nav .sub img {
+    max-width: 100%;
+}
+
+#nav .sub:hover {
+
+}
+
+#nav ul li .sub li:hover {
+
+}
+
+#nav ul li .sub li:hover a {
+    color:#ffffff;
+}
+
+#nav ul li:hover .sub {
+
+}
+
+
+#audiencenav {
+    position: absolute;
+    right:10px;
+    top:15px;
+    z-index:300;
+}
+
+#audiencenav ul {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+#audiencenav li {
+    float:left;
+    margin:1px;
+    padding:0px;
+}
+
+#audiencenav li a {
+    display: block;
+    margin:0px;
+    padding:3px 10px 1px 10px;
+    color:#ffffff;
+    font:14px 'museo-slab', serif;
+    text-decoration: none;
+
+}
+
+#audiencenav li a:hover {
+    color:#69b7c3;
+}
+
