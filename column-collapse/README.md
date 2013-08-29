@@ -1,4 +1,4 @@
-fun-one-offs
-============
+collumn-collapse
+================
 
-A collection of little scripts that each do something interesting
+A bit of contorl logic designed to move arround and append html elements from sidebars to a main responsive content container
