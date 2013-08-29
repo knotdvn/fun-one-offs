@@ -4,7 +4,7 @@
         //the tiles are added to a masonry container
         //and removed at different breakpoints
 
-        //get width //straight javascript case why not?
+        //get width //straight javascript cause why not?
         function getWidth(){
             var width = window.innerWidth ||
                 document.documentElement.clientWidth ||
